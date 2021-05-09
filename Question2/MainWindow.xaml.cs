@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -53,6 +54,10 @@ namespace Question2
             string text = System.IO.File.ReadAllText(path);
             MessageBox.Show(text);
 
+            var pathToDLLFile = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Antlr3.Runtime.dll");
+            Assembly assembly = Assembly.LoadFrom(pathToDLLFile);
+            Version ver = assembly.GetName().Version;
+            MessageBox.Show(ver.ToString());
         }
 
     }
