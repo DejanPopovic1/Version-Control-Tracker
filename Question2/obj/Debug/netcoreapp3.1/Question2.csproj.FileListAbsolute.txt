@@ -1,0 +1,2 @@
+C:\C_C++ Code\Question2\Question2\bin\Debug\netcoreapp3.1\Question2.exe
+C:\C_C++ Code\Question2\Question2\bin\Debug\netcoreapp3.1\Question2.dll
