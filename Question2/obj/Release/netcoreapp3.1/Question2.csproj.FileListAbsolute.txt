@@ -16,3 +16,4 @@ C:\C_C++ Code\Question2\Question2\obj\Release\netcoreapp3.1\Question2.csproj.Cor
 C:\C_C++ Code\Question2\Question2\obj\Release\netcoreapp3.1\Question2.dll
 C:\C_C++ Code\Question2\Question2\obj\Release\netcoreapp3.1\Question2.pdb
 C:\C_C++ Code\Question2\Question2\obj\Release\netcoreapp3.1\Question2.genruntimeconfig.cache
+C:\C_C++ Code\Question2\Question2\obj\Release\netcoreapp3.1\Question2.csprojAssemblyReference.cache
