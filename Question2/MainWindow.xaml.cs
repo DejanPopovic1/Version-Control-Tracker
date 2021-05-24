@@ -77,9 +77,21 @@ namespace Question2
             return count;
         }
 
+        public void isValidDirectory(String input) { 
+
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var a = TextBox1.Text;
+            String directory = TextBox1.Text;
+            if (!Directory.Exists(directory)) {
+                MessageBox.Show("Invalid Directory");
+                return;
+            }
+            int numberOfFiles = CountNumberOfFilesInDirectory(directory);
+          
+            String test = CountNumberOfFilesInDirectory(directory).ToString();
+
             //There are 10 files in the DLL folder.
             //We get the versions of all of the files.
             //Should use file iterator here instead.
@@ -117,12 +129,14 @@ namespace Question2
             String ver9 = assembly9.GetName().Version.ToString();
             String ver10 = assembly10.GetName().Version.ToString();
 
-           
+            String result = ver1 + "\n" + ver2 + "\n" + ver3 + "\n" + ver4 + "\n" + ver5 + "\n" + ver6 + "\n" + ver7 + "\n" + ver8 + "\n" + ver9 + "\n" + ver10;
+            TextBox2.Text = result;
 
-            MessageBox.Show(ver10);
+
+            MessageBox.Show(ver1);
 
 
-            string test = CountNumberOfFilesInDirectory(a).ToString();
+
 
             MessageBox.Show(test);
 

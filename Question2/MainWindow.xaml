@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Question2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="579" Width="894">
     <Grid>
-        <TextBox Name="TextBox1" HorizontalAlignment="Left" Margin="33,51,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="44"/>
-        <Label Content="Relative directory to check for errnous DLL's &#xA;" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Button1" Content="Check For Erronous Libraries" HorizontalAlignment="Left" Margin="33,114,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox Name="TextBox1" HorizontalAlignment="Left" Margin="33,53,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="44"/>
+        <Label Content="Directory to check for erronous DLL's&#xA;(Specify Absolute Directory) &#xA;" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Button1" Content="Check For Erronous Libraries" HorizontalAlignment="Left" Margin="33,126,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
 
 
 
         <!-- People list -->
-        <ListBox Name="peopleListBox" Grid.Column="0" Margin="33,190,43,52">
+        <ListBox Name="peopleListBox" Grid.Column="0" Margin="33,190,459,164">
             <ListBoxItem>Antlr3.Runtime.dll</ListBoxItem>
             <ListBoxItem>EntityFramework.dll</ListBoxItem>
             <ListBoxItem>EntityFramework.SqlServer.dll</ListBoxItem>
@@ -27,6 +27,7 @@
             <ListBoxItem>System.Web.Mvc.dll</ListBoxItem>
             <ListBoxItem>System.Web.Optimization.dll</ListBoxItem>
         </ListBox>
+        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Margin="33,432,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="89"/>
 
         <!-- View report button -->
 
