@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\C_C++ Code\\Question2\\Question2\\Question2.csproj",
+      "projectUniqueName": "C:\\C_C++ Code PORTFOLIO\\Question2\\Question2\\Question2.csproj",
       "projectName": "Question2",
-      "projectPath": "C:\\C_C++ Code\\Question2\\Question2\\Question2.csproj",
+      "projectPath": "C:\\C_C++ Code PORTFOLIO\\Question2\\Question2\\Question2.csproj",
       "packagesPath": "C:\\Users\\DejanP\\.nuget\\packages\\",
-      "outputPath": "C:\\C_C++ Code\\Question2\\Question2\\obj\\",
+      "outputPath": "C:\\C_C++ Code PORTFOLIO\\Question2\\Question2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DejanP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

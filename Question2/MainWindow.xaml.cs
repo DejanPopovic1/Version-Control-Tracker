@@ -57,6 +57,7 @@ namespace Question2
     }
 
 
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -67,7 +68,14 @@ namespace Question2
             //TextBlock1.SetBinding(TextBlock.TextProperty, myBinding);
         }
 
-        private void Button_Click2(object sender, RoutedEventArgs e)
+        public int CountNumberOfFilesInDirectory(string directory)
+        {
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(directory);
+            int count = dir.GetFiles().Length;
+            return count;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             //There are 10 files in the DLL folder.
             //We get the versions of all of the files.
@@ -108,7 +116,12 @@ namespace Question2
 
            
 
-            //MessageBox.Show(ver.ToString());
+            MessageBox.Show(ver10);
+
+            string test = CountNumberOfFilesInDirectory("C:\\").ToString();
+
+            MessageBox.Show(test);
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -116,11 +129,6 @@ namespace Question2
 
         }
     }
-
-
-
-
-
 
     class MainWindowViewModel : INotifyPropertyChanged
     {
@@ -148,17 +156,4 @@ namespace Question2
             if (changed != null) changed(this, e);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
