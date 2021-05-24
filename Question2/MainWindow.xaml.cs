@@ -60,6 +60,8 @@ namespace Question2
 
     public partial class MainWindow : Window
     {
+        String specifiedDirectory;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -77,6 +79,7 @@ namespace Question2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var a = TextBox1.Text;
             //There are 10 files in the DLL folder.
             //We get the versions of all of the files.
             //Should use file iterator here instead.
@@ -118,7 +121,8 @@ namespace Question2
 
             MessageBox.Show(ver10);
 
-            string test = CountNumberOfFilesInDirectory("C:\\").ToString();
+
+            string test = CountNumberOfFilesInDirectory(a).ToString();
 
             MessageBox.Show(test);
 
