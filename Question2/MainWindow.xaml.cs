@@ -71,12 +71,27 @@ namespace Question2
             InitializeComponent();
             var myBinding = new Binding("ColorName");
             getListOfPreviousLibraryVersions();
+            getDirectoryDictionary("Inpt test");
             Debug.WriteLine("TESTING");
             Console.WriteLine("Testiong 1 2 3");
             System.Console.WriteLine("Third Time Lucky???");
             //TextBlock1.SetBinding(TextBlock.TextProperty, myBinding);
         }
 
+        public Dictionary<string, string> getDirectoryDictionary(String directory)
+        {
+            directory = @"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs";
+            Dictionary<string, string> ans = new Dictionary<string, string>();
+            foreach (var file in Directory.EnumerateFiles(directory, "*.dll"))
+            {
+                Assembly assembly1 = Assembly.LoadFrom(file);
+                String ver1 = assembly1.GetName().Version.ToString();
+                ans.Add(Path.GetFileName(file), ver1);
+            }
+            return ans;
+        }
+
+        //Currently Hardcoded
         public Dictionary<string, string> getListOfPreviousLibraryVersions()
         {
             Dictionary<string, string> ans = new Dictionary<string, string>();
@@ -85,11 +100,6 @@ namespace Question2
             ans.Add("My.Third.Project", "5.0.0.0");
             ans.Add("My.Fourth.Project", "1.0.0.0");
             ans.Add("My.Fifth.Project", "0.0.0.0");
-            MessageBox.Show(ans.ElementAt(0).Value);
-            MessageBox.Show(ans.ElementAt(1).Value);
-            MessageBox.Show(ans.ElementAt(2).Value);
-            MessageBox.Show(ans.ElementAt(3).Value);
-            MessageBox.Show(ans.ElementAt(4).Value);
             return ans;
         }
 
