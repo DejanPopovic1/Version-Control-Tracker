@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="579" Width="894">
     <Grid>
-        <TextBox Name="TextBox1" HorizontalAlignment="Left" Margin="33,53,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="44"/>
-        <Label Content="Directory to check for erronous DLL's&#xA;(Specify Absolute Directory) &#xA;" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Button1" Content="Check For Erronous Libraries" HorizontalAlignment="Left" Margin="33,126,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox Name="TextBox1" HorizontalAlignment="Left" Margin="33,41,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="56"/>
+        <Label Content="Specify release folder &#xA;" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Button1" Content="Confirm" HorizontalAlignment="Left" Margin="33,133,0,0" VerticalAlignment="Top" Click="Button_Click" Width="402"/>
 
 
 
@@ -28,6 +28,7 @@
             <ListBoxItem>System.Web.Optimization.dll</ListBoxItem>
         </ListBox>
         <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Margin="33,432,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="89"/>
+        <Label Content="Confirm rebuild completed" HorizontalAlignment="Left" Margin="33,102,0,0" VerticalAlignment="Top"/>
 
         <!-- View report button -->
 
