@@ -58,8 +58,12 @@ namespace Question2
 
 
 
+
     public partial class MainWindow : Window
     {
+        //SplashScreen s = new SplashScreen("C:/C_C++ Code PORTFOLIO/Question2/Question2/imageBackground.jpg");
+        //s.Show(TimeSpan.FromSeconds(2));
+
         String specifiedDirectory;
 
         public MainWindow()
