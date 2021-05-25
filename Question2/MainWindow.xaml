@@ -15,6 +15,7 @@
 
 
         <!-- People list -->
+        <!--
         <ListBox Name="peopleListBox" Grid.Column="0" Margin="33,190,459,164">
             <ListBoxItem>Antlr3.Runtime.dll</ListBoxItem>
             <ListBoxItem>EntityFramework.dll</ListBoxItem>
@@ -27,8 +28,13 @@
             <ListBoxItem>System.Web.Mvc.dll</ListBoxItem>
             <ListBoxItem>System.Web.Optimization.dll</ListBoxItem>
         </ListBox>
-        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Margin="33,432,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="89"/>
+        -->
+        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Margin="33,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="89"/>
         <Label Content="Confirm rebuild completed" HorizontalAlignment="Left" Margin="33,102,0,0" VerticalAlignment="Top"/>
+        <Label Content="List project names, e.g:&#xD;&#xA;My.Foo.Bar&#xD;&#xA;My.Other.Project&#xD;&#xA;Yet.Another.Project" HorizontalAlignment="Left" Margin="33,158,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="33,0,0,0" Text="Enter project names" TextWrapping="Wrap" VerticalAlignment="Center" Width="724" TextChanged="TextBox_TextChanged_1" Height="71"/>
+        <Button Content="Check for Outdated Libraries" HorizontalAlignment="Left" Margin="33,335,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="402"/>
+        <Label Content="List of potentially outdated libraries (all non specified projects are assumed to be third party libraries)" HorizontalAlignment="Left" Margin="33,370,0,0" VerticalAlignment="Top"/>
 
         <!-- View report button -->
 
