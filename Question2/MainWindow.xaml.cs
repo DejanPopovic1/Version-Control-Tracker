@@ -70,9 +70,29 @@ namespace Question2
         {
             InitializeComponent();
             var myBinding = new Binding("ColorName");
-            
+            getListOfPreviousLibraryVersions();
+            Debug.WriteLine("TESTING");
+            Console.WriteLine("Testiong 1 2 3");
+            System.Console.WriteLine("Third Time Lucky???");
             //TextBlock1.SetBinding(TextBlock.TextProperty, myBinding);
         }
+
+        public Dictionary<string, string> getListOfPreviousLibraryVersions()
+        {
+            Dictionary<string, string> ans = new Dictionary<string, string>();
+            ans.Add("My.First.Project","2.0.0.0");
+            ans.Add("My.Second.Project", "5.0.0.0");
+            ans.Add("My.Third.Project", "5.0.0.0");
+            ans.Add("My.Fourth.Project", "1.0.0.0");
+            ans.Add("My.Fifth.Project", "0.0.0.0");
+            MessageBox.Show(ans.ElementAt(0).Value);
+            MessageBox.Show(ans.ElementAt(1).Value);
+            MessageBox.Show(ans.ElementAt(2).Value);
+            MessageBox.Show(ans.ElementAt(3).Value);
+            MessageBox.Show(ans.ElementAt(4).Value);
+            return ans;
+        }
+
 
         public int CountNumberOfFilesInDirectory(string directory)
         {
@@ -87,6 +107,13 @@ namespace Question2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+
+            //Debug.WriteLine("TESTING");
+            //Console.WriteLine("Testiong 1 2 3");
+            //System.Console.WriteLine("Third Time Lucky???");
+            
+
             String directory = TextBox1.Text;
             if (!Directory.Exists(directory)) {
                 MessageBox.Show("Invalid Directory");
@@ -100,11 +127,11 @@ namespace Question2
             //We get the versions of all of the files.
             //Should use file iterator here instead.
 
-            var pathToDLLFile1 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Antlr3.Runtime.dll");
-            var pathToDLLFile2 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\EntityFramework.dll");
-            var pathToDLLFile3 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\EntityFramework.SqlServer.dll");
-            var pathToDLLFile4 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll");
-            var pathToDLLFile5 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Microsoft.Web.Infrastructure.dll");
+            var pathToDLLFile1 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.First.Project.dll");
+            var pathToDLLFile2 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Second.Project.dll");
+            var pathToDLLFile3 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Third.Project.dll");
+            var pathToDLLFile4 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Fourth.Project.dll");
+            var pathToDLLFile5 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Fifth.Project.dll");
             var pathToDLLFile6 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\MyApplication.dll");
             var pathToDLLFile7 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Newtonsoft.Json.dll");
             var pathToDLLFile8 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Helpers.dll");
