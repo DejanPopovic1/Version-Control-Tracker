@@ -80,9 +80,9 @@ namespace Question2
 
         public List<String> createListOfProjects()
         {
-            //
-            //String directory = TextBox1.Text;
-            return new List<String>();
+            String listOfProjects = TextBox3.Text;
+            List<string> idList = listOfProjects.Split(new[] { "\n" }, StringSplitOptions.None).ToList();
+            return idList;
         }
 
         public Dictionary<string, string> trimDirectoryDictionary(Dictionary<String, String> untrimmedDictionary, List<string> projects)
