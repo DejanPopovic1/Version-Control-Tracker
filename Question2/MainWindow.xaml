@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Question2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="579" Width="894">
+        Title="DLL Tracker" Height="579" Width="894">
     <Grid>
         <TextBox Name="TextBox1" HorizontalAlignment="Left" Margin="33,41,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="56"/>
         <Label Content="Specify release folder &#xA;" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
@@ -29,7 +29,7 @@
             <ListBoxItem>System.Web.Optimization.dll</ListBoxItem>
         </ListBox>
         -->
-        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Margin="33,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="89"/>
+        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Margin="33,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="120"/>
         <Label Content="Confirm rebuild completed" HorizontalAlignment="Left" Margin="33,102,0,0" VerticalAlignment="Top"/>
         <Label Content="List project names, e.g:&#xD;&#xA;My.Foo.Bar&#xD;&#xA;My.Other.Project&#xD;&#xA;Yet.Another.Project" HorizontalAlignment="Left" Margin="33,158,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="33,0,0,0" Text="Enter project names" TextWrapping="Wrap" VerticalAlignment="Center" Width="724" TextChanged="TextBox_TextChanged_1" Height="71"/>
