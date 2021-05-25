@@ -78,7 +78,12 @@ namespace Question2
             //TextBlock1.SetBinding(TextBlock.TextProperty, myBinding);
         }
 
-       
+        public List<String> createListOfProjects()
+        {
+            //
+            //String directory = TextBox1.Text;
+            return new List<String>();
+        }
 
         public Dictionary<string, string> trimDirectoryDictionary(Dictionary<String, String> untrimmedDictionary, List<string> projects)
         {
