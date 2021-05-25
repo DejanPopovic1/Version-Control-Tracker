@@ -96,6 +96,22 @@ namespace Question2
             return d;
         }
 
+        //This is simplified. I must build in more complex rules
+        //oldVer and newVer conforms to the versioning pattern w.x.y.z
+        public bool isValidUpdate(String oldVer, String newVer)
+        {
+            int index;
+            index = oldVer.IndexOf('.');
+            string oldMajVer = oldVer.Substring(0, index);
+            index = newVer.IndexOf('.');
+            string newMajVer = newVer.Substring(0, index);
+            if (Int16.Parse(newMajVer) == Int16.Parse(oldMajVer) + 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void determineOutOfDateLibraries() {
             return;
         }
