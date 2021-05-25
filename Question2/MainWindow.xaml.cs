@@ -78,6 +78,14 @@ namespace Question2
             //TextBlock1.SetBinding(TextBlock.TextProperty, myBinding);
         }
 
+       
+
+        public Dictionary<string, string> trimDirectoryDictionary(Dictionary<String, String> untrimmedDictionary, List<string> projects)
+        {
+            //
+            return new Dictionary<string, string>();
+        }
+
         public Dictionary<string, string> getDirectoryDictionary(String directory)
         {
             directory = @"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs";
