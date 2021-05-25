@@ -85,10 +85,15 @@ namespace Question2
             return idList;
         }
 
-        public Dictionary<string, string> trimDirectoryDictionary(Dictionary<String, String> untrimmedDictionary, List<string> projects)
+        public Dictionary<string, string> trimDirectoryDictionary(Dictionary<String, String> d, List<string> projects)
         {
-            //
-            return new Dictionary<string, string>();
+            foreach (KeyValuePair<string, string> entry in d)
+            {
+                if (!projects.Contains(entry.Key)) {
+                    d.Remove(entry.Key);
+                }
+            }
+            return d;
         }
 
         public Dictionary<string, string> getDirectoryDictionary(String directory)
