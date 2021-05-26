@@ -221,6 +221,20 @@ namespace Question2
 
         }
 
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+
+
+
+            MessageBox.Show("Button 1 Clicked");
+
+        }
+
+
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -231,10 +245,7 @@ namespace Question2
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+  
     }
 
     class MainWindowViewModel : INotifyPropertyChanged
