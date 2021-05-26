@@ -225,8 +225,12 @@ namespace Question2
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
-
+            //Historic
+            Dictionary<string, string> d = getListOfPreviousLibraryVersions();
+            //Current
+            Dictionary<string, string> dd =  getDirectoryDictionary(@"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs");
+            List<String> l = createListOfProjects();
+            Dictionary<string, string> tdd = trimDirectoryDictionary(dd, l);
 
 
             MessageBox.Show("Button 1 Clicked");
