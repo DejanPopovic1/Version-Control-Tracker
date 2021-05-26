@@ -89,7 +89,7 @@ namespace Question2
         {
             foreach (KeyValuePair<string, string> entry in d)
             {
-                if (!projects.Contains(entry.Key)) {
+                if (projects.Contains(entry.Key)) {
                     d.Remove(entry.Key);
                 }
             }
@@ -243,11 +243,12 @@ namespace Question2
             //Current
             Dictionary<string, string> dirDic =  getDirectoryDictionary(@"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs");
             List<String> l = createListOfProjects();
+            MessageBox.Show(l.ElementAt(0));
             Dictionary<string, string> trimmedDirDic = trimDirectoryDictionary(dirDic, l);
-
-            identifyOutliers(histDirDic, trimmedDirDic);
-
-            MessageBox.Show("Button 1 Clicked");
+            MessageBox.Show(trimmedDirDic.ElementAt(0).Key);
+            List<String> result = identifyOutliers(histDirDic, trimmedDirDic);
+            if (!result.Any()) { System.Environment.Exit(-1); }
+            MessageBox.Show(result.ElementAt(0));
 
         }
 
