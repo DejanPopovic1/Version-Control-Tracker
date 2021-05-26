@@ -100,7 +100,6 @@ namespace Question2
         //oldVer and newVer conforms to the versioning pattern w.x.y.z
         public bool isValidUpdate(String oldVer, String newVer)
         {
-            return false;
             int index;
             index = oldVer.IndexOf('.');
             string oldMajVer = oldVer.Substring(0, index);
@@ -141,7 +140,6 @@ namespace Question2
             ans.Add("My.Fifth.Project.dll", "1.0.0.0");
             return ans;
         }
-
 
         public int CountNumberOfFilesInDirectory(string directory)
         {
