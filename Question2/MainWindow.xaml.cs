@@ -223,7 +223,17 @@ namespace Question2
 
         public List<String> identifyOutliers(Dictionary<string, string> h, Dictionary<string, string> c) 
         {
-            return new List<String> ();
+            List<String> result = new List<String>();
+            foreach (KeyValuePair<string, string> j in h)
+            {
+                foreach (KeyValuePair<string, string> k in c)
+                {
+                    if (!isValidUpdate(j.Value, k.Value)) {
+                        result.Add(j.Key);
+                    }
+                }
+            }
+            return result;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
