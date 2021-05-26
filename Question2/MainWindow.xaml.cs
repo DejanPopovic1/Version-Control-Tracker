@@ -100,6 +100,7 @@ namespace Question2
         //oldVer and newVer conforms to the versioning pattern w.x.y.z
         public bool isValidUpdate(String oldVer, String newVer)
         {
+            return false;
             int index;
             index = oldVer.IndexOf('.');
             string oldMajVer = oldVer.Substring(0, index);
@@ -133,11 +134,11 @@ namespace Question2
         public Dictionary<string, string> getListOfPreviousLibraryVersions()
         {
             Dictionary<string, string> ans = new Dictionary<string, string>();
-            ans.Add("My.First.Project","3.0.0.0");
-            ans.Add("My.Second.Project", "6.0.0.0");
-            ans.Add("My.Third.Project", "6.0.0.0");
-            ans.Add("My.Fourth.Project", "2.0.0.0");
-            ans.Add("My.Fifth.Project", "1.0.0.0");
+            ans.Add("My.First.Project.dll","3.0.0.0");
+            ans.Add("My.Second.Project.dll", "6.0.0.0");
+            ans.Add("My.Third.Project.dll", "6.0.0.0");
+            ans.Add("My.Fourth.Project.dll", "2.0.0.0");
+            ans.Add("My.Fifth.Project.dll", "1.0.0.0");
             return ans;
         }
 
@@ -180,7 +181,7 @@ namespace Question2
             var pathToDLLFile3 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Third.Project.dll");
             var pathToDLLFile4 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Fourth.Project.dll");
             var pathToDLLFile5 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Fifth.Project.dll");
-            var pathToDLLFile6 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\MyApplication.dll");
+            var pathToDLLFile6 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Antlr3.Runtime.dll");
             var pathToDLLFile7 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Newtonsoft.Json.dll");
             var pathToDLLFile8 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Helpers.dll");
             var pathToDLLFile9 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Mvc.dll");
@@ -228,9 +229,14 @@ namespace Question2
             {
                 foreach (KeyValuePair<string, string> k in c)
                 {
-                    if (!isValidUpdate(j.Value, k.Value)) {
-                        result.Add(j.Key);
+                    if (j.Key == k.Key) {
+                        if (!isValidUpdate(j.Value, k.Value)){
+                            result.Add(j.Key);
+                        }
                     }
+
+
+                   
                 }
             }
             return result;
@@ -247,7 +253,7 @@ namespace Question2
             Dictionary<string, string> trimmedDirDic = trimDirectoryDictionary(dirDic, l);
             //MessageBox.Show(trimmedDirDic.ElementAt(0).Key);
             List<String> result = identifyOutliers(histDirDic, trimmedDirDic);
-            if (!result.Any()) { System.Environment.Exit(-1); }
+            //if (!result.Any()) { System.Environment.Exit(-1); }
             //MessageBox.Show(result.ElementAt(0));
             TextBox2.Text = outputList(result);
 
