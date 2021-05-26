@@ -243,16 +243,19 @@ namespace Question2
             //Current
             Dictionary<string, string> dirDic =  getDirectoryDictionary(@"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs");
             List<String> l = createListOfProjects();
-            MessageBox.Show(l.ElementAt(0));
+            //MessageBox.Show(l.ElementAt(0));
             Dictionary<string, string> trimmedDirDic = trimDirectoryDictionary(dirDic, l);
-            MessageBox.Show(trimmedDirDic.ElementAt(0).Key);
+            //MessageBox.Show(trimmedDirDic.ElementAt(0).Key);
             List<String> result = identifyOutliers(histDirDic, trimmedDirDic);
             if (!result.Any()) { System.Environment.Exit(-1); }
-            MessageBox.Show(result.ElementAt(0));
+            //MessageBox.Show(result.ElementAt(0));
+            TextBox2.Text = outputList(result);
 
         }
 
-
+        public String outputList(List<String> l) {
+            return String.Join("\n", l.ToArray());
+        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
