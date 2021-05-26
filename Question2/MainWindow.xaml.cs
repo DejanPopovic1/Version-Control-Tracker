@@ -133,11 +133,11 @@ namespace Question2
         public Dictionary<string, string> getListOfPreviousLibraryVersions()
         {
             Dictionary<string, string> ans = new Dictionary<string, string>();
-            ans.Add("My.First.Project","2.0.0.0");
-            ans.Add("My.Second.Project", "5.0.0.0");
-            ans.Add("My.Third.Project", "5.0.0.0");
-            ans.Add("My.Fourth.Project", "1.0.0.0");
-            ans.Add("My.Fifth.Project", "0.0.0.0");
+            ans.Add("My.First.Project","3.0.0.0");
+            ans.Add("My.Second.Project", "6.0.0.0");
+            ans.Add("My.Third.Project", "6.0.0.0");
+            ans.Add("My.Fourth.Project", "2.0.0.0");
+            ans.Add("My.Fifth.Project", "1.0.0.0");
             return ans;
         }
 
@@ -245,6 +245,7 @@ namespace Question2
             List<String> l = createListOfProjects();
             Dictionary<string, string> trimmedDirDic = trimDirectoryDictionary(dirDic, l);
 
+            identifyOutliers(histDirDic, trimmedDirDic);
 
             MessageBox.Show("Button 1 Clicked");
 
