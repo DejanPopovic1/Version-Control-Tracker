@@ -221,16 +221,19 @@ namespace Question2
 
         }
 
-
+        public List<String> identifyOutliers(Dictionary<string, string> h, Dictionary<string, string> c) 
+        {
+            return new List<String> ();
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //Historic
-            Dictionary<string, string> d = getListOfPreviousLibraryVersions();
+            Dictionary<string, string> histDirDic = getListOfPreviousLibraryVersions();
             //Current
-            Dictionary<string, string> dd =  getDirectoryDictionary(@"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs");
+            Dictionary<string, string> dirDic =  getDirectoryDictionary(@"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs");
             List<String> l = createListOfProjects();
-            Dictionary<string, string> tdd = trimDirectoryDictionary(dd, l);
+            Dictionary<string, string> trimmedDirDic = trimDirectoryDictionary(dirDic, l);
 
 
             MessageBox.Show("Button 1 Clicked");
