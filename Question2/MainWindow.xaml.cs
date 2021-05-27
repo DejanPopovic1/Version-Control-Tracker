@@ -61,10 +61,10 @@ namespace Question2
 
     public partial class MainWindow : Window
     {
+        String trackingDirectory;
+
         //SplashScreen s = new SplashScreen("C:/C_C++ Code PORTFOLIO/Question2/Question2/imageBackground.jpg");
         //s.Show(TimeSpan.FromSeconds(2));
-
-        String specifiedDirectory;
 
         public MainWindow()
         {
@@ -154,69 +154,50 @@ namespace Question2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
-            //Debug.WriteLine("TESTING");
-            //Console.WriteLine("Testiong 1 2 3");
-            //System.Console.WriteLine("Third Time Lucky???");
-            
-
-            String directory = TextBox1.Text;
-            if (!Directory.Exists(directory)) {
+            trackingDirectory = TextBox1.Text;
+            if (!Directory.Exists(trackingDirectory)) {
                 MessageBox.Show("Invalid Directory");
                 return;
             }
-            int numberOfFiles = CountNumberOfFilesInDirectory(directory);
-          
-            String test = CountNumberOfFilesInDirectory(directory).ToString();
-
-            //There are 10 files in the DLL folder.
-            //We get the versions of all of the files.
-            //Should use file iterator here instead.
-
-            var pathToDLLFile1 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.First.Project.dll");
-            var pathToDLLFile2 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Second.Project.dll");
-            var pathToDLLFile3 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Third.Project.dll");
-            var pathToDLLFile4 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Fourth.Project.dll");
-            var pathToDLLFile5 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Fifth.Project.dll");
-            var pathToDLLFile6 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Antlr3.Runtime.dll");
-            var pathToDLLFile7 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Newtonsoft.Json.dll");
-            var pathToDLLFile8 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Helpers.dll");
-            var pathToDLLFile9 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Mvc.dll");
-            var pathToDLLFile10 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Optimization.dll");
-
-            Assembly assembly1 = Assembly.LoadFrom(pathToDLLFile1);
-            Assembly assembly2 = Assembly.LoadFrom(pathToDLLFile2);
-            Assembly assembly3 = Assembly.LoadFrom(pathToDLLFile3);
-            Assembly assembly4 = Assembly.LoadFrom(pathToDLLFile4);
-            Assembly assembly5 = Assembly.LoadFrom(pathToDLLFile5);
-            Assembly assembly6 = Assembly.LoadFrom(pathToDLLFile6);
-            Assembly assembly7 = Assembly.LoadFrom(pathToDLLFile7);
-            Assembly assembly8 = Assembly.LoadFrom(pathToDLLFile8);
-            Assembly assembly9 = Assembly.LoadFrom(pathToDLLFile9);
-            Assembly assembly10 = Assembly.LoadFrom(pathToDLLFile10);
-
-            String ver1 = assembly1.GetName().Version.ToString();
-            String ver2 = assembly2.GetName().Version.ToString();
-            String ver3 = assembly3.GetName().Version.ToString();
-            String ver4 = assembly4.GetName().Version.ToString();
-            String ver5 = assembly5.GetName().Version.ToString();
-            String ver6 = assembly6.GetName().Version.ToString();
-            String ver7 = assembly7.GetName().Version.ToString();
-            String ver8 = assembly8.GetName().Version.ToString();
-            String ver9 = assembly9.GetName().Version.ToString();
-            String ver10 = assembly10.GetName().Version.ToString();
-
-            String result = ver1 + "\n" + ver2 + "\n" + ver3 + "\n" + ver4 + "\n" + ver5 + "\n" + ver6 + "\n" + ver7 + "\n" + ver8 + "\n" + ver9 + "\n" + ver10;
-            TextBox2.Text = result;
-
-
-            MessageBox.Show(ver1);
-
-
-
-
-            MessageBox.Show(test);
+            //int numberOfFiles = CountNumberOfFilesInDirectory(directory);
+            //String test = CountNumberOfFilesInDirectory(directory).ToString();
+            ////There are 10 files in the DLL folder.
+            ////We get the versions of all of the files.
+            ////Should use file iterator here instead.
+            //var pathToDLLFile1 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.First.Project.dll");
+            //var pathToDLLFile2 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Second.Project.dll");
+            //var pathToDLLFile3 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Third.Project.dll");
+            //var pathToDLLFile4 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Fourth.Project.dll");
+            //var pathToDLLFile5 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\My.Fifth.Project.dll");
+            //var pathToDLLFile6 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Antlr3.Runtime.dll");
+            //var pathToDLLFile7 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Newtonsoft.Json.dll");
+            //var pathToDLLFile8 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Helpers.dll");
+            //var pathToDLLFile9 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Mvc.dll");
+            //var pathToDLLFile10 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Optimization.dll");
+            //Assembly assembly1 = Assembly.LoadFrom(pathToDLLFile1);
+            //Assembly assembly2 = Assembly.LoadFrom(pathToDLLFile2);
+            //Assembly assembly3 = Assembly.LoadFrom(pathToDLLFile3);
+            //Assembly assembly4 = Assembly.LoadFrom(pathToDLLFile4);
+            //Assembly assembly5 = Assembly.LoadFrom(pathToDLLFile5);
+            //Assembly assembly6 = Assembly.LoadFrom(pathToDLLFile6);
+            //Assembly assembly7 = Assembly.LoadFrom(pathToDLLFile7);
+            //Assembly assembly8 = Assembly.LoadFrom(pathToDLLFile8);
+            //Assembly assembly9 = Assembly.LoadFrom(pathToDLLFile9);
+            //Assembly assembly10 = Assembly.LoadFrom(pathToDLLFile10);
+            //String ver1 = assembly1.GetName().Version.ToString();
+            //String ver2 = assembly2.GetName().Version.ToString();
+            //String ver3 = assembly3.GetName().Version.ToString();
+            //String ver4 = assembly4.GetName().Version.ToString();
+            //String ver5 = assembly5.GetName().Version.ToString();
+            //String ver6 = assembly6.GetName().Version.ToString();
+            //String ver7 = assembly7.GetName().Version.ToString();
+            //String ver8 = assembly8.GetName().Version.ToString();
+            //String ver9 = assembly9.GetName().Version.ToString();
+            //String ver10 = assembly10.GetName().Version.ToString();
+            //String result = ver1 + "\n" + ver2 + "\n" + ver3 + "\n" + ver4 + "\n" + ver5 + "\n" + ver6 + "\n" + ver7 + "\n" + ver8 + "\n" + ver9 + "\n" + ver10;
+            //TextBox2.Text = result;
+            //MessageBox.Show(ver1);
+            //MessageBox.Show(test);
 
         }
 
@@ -242,6 +223,12 @@ namespace Question2
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            trackingDirectory = TextBox1.Text;
+            if (!Directory.Exists(trackingDirectory))
+            {
+                MessageBox.Show("Invalid Directory");
+                return;
+            }
             //Historic
             Dictionary<string, string> histDirDic = getListOfPreviousLibraryVersions();
             //Current
