@@ -24,37 +24,39 @@ namespace Question2
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    class Person
-    {
-        //There are 10 files in the DLL folder.
-        //We get the versions of all of the files.
-        //Should use file iterator here instead.
-        public void getVersions() {
-            var pathToDLLFile1 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Antlr3.Runtime.dll");
-            var pathToDLLFile2 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\EntityFramework.dll");
-            var pathToDLLFile3 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\EntityFramework.SqlServer.dll");
-            var pathToDLLFile4 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll");
-            var pathToDLLFile5 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Microsoft.Web.Infrastructure.dll");
-            var pathToDLLFile6 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\MyApplication.dll");
-            var pathToDLLFile7 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Newtonsoft.Json.dll");
-            var pathToDLLFile8 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Helpers.dll");
-            var pathToDLLFile9 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Mvc.dll");
-            var pathToDLLFile10 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Optimization.dll");
 
-            Assembly assembly1 = Assembly.LoadFrom(pathToDLLFile1);
-            Assembly assembly2 = Assembly.LoadFrom(pathToDLLFile2);
-            Assembly assembly3 = Assembly.LoadFrom(pathToDLLFile3);
-            Assembly assembly4 = Assembly.LoadFrom(pathToDLLFile4);
-            Assembly assembly5 = Assembly.LoadFrom(pathToDLLFile5);
-            Assembly assembly6 = Assembly.LoadFrom(pathToDLLFile6);
-            Assembly assembly7 = Assembly.LoadFrom(pathToDLLFile7);
-            Assembly assembly8 = Assembly.LoadFrom(pathToDLLFile8);
-            Assembly assembly9 = Assembly.LoadFrom(pathToDLLFile9);
-            Assembly assembly10 = Assembly.LoadFrom(pathToDLLFile10);
 
-            string[] result;
-        }
-    }
+    //class Person
+    //{
+    //    //There are 10 files in the DLL folder.
+    //    //We get the versions of all of the files.
+    //    //Should use file iterator here instead.
+    //    public void getVersions() {
+    //        var pathToDLLFile1 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Antlr3.Runtime.dll");
+    //        var pathToDLLFile2 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\EntityFramework.dll");
+    //        var pathToDLLFile3 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\EntityFramework.SqlServer.dll");
+    //        var pathToDLLFile4 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll");
+    //        var pathToDLLFile5 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Microsoft.Web.Infrastructure.dll");
+    //        var pathToDLLFile6 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\MyApplication.dll");
+    //        var pathToDLLFile7 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\Newtonsoft.Json.dll");
+    //        var pathToDLLFile8 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Helpers.dll");
+    //        var pathToDLLFile9 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Mvc.dll");
+    //        var pathToDLLFile10 = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "myDLLs\\System.Web.Optimization.dll");
+
+    //        Assembly assembly1 = Assembly.LoadFrom(pathToDLLFile1);
+    //        Assembly assembly2 = Assembly.LoadFrom(pathToDLLFile2);
+    //        Assembly assembly3 = Assembly.LoadFrom(pathToDLLFile3);
+    //        Assembly assembly4 = Assembly.LoadFrom(pathToDLLFile4);
+    //        Assembly assembly5 = Assembly.LoadFrom(pathToDLLFile5);
+    //        Assembly assembly6 = Assembly.LoadFrom(pathToDLLFile6);
+    //        Assembly assembly7 = Assembly.LoadFrom(pathToDLLFile7);
+    //        Assembly assembly8 = Assembly.LoadFrom(pathToDLLFile8);
+    //        Assembly assembly9 = Assembly.LoadFrom(pathToDLLFile9);
+    //        Assembly assembly10 = Assembly.LoadFrom(pathToDLLFile10);
+
+    //        string[] result;
+    //    }
+    //}
 
 
 
@@ -71,7 +73,7 @@ namespace Question2
             InitializeComponent();
             var myBinding = new Binding("ColorName");
             getListOfPreviousLibraryVersions();
-            getDirectoryDictionary("Inpt test");
+            //getDirectoryDictionary("Inpt test");
             Debug.WriteLine("TESTING");
             Console.WriteLine("Testiong 1 2 3");
             System.Console.WriteLine("Third Time Lucky???");
@@ -80,7 +82,7 @@ namespace Question2
 
         public List<String> createListOfProjects()
         {
-            String listOfProjects = TextBox3.Text;
+            String listOfProjects = ProjectNameTextBox.Text;
             List<string> idList = listOfProjects.Split(new[] { "\r\n" }, StringSplitOptions.None).ToList();
             return idList;
         }
@@ -118,7 +120,7 @@ namespace Question2
 
         public Dictionary<string, string> getDirectoryDictionary(String directory)
         {
-            directory = @"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs";
+            //directory = @"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs";
             Dictionary<string, string> ans = new Dictionary<string, string>();
             foreach (var file in Directory.EnumerateFiles(directory, "*.dll"))
             {
@@ -152,9 +154,9 @@ namespace Question2
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void VersionTheBuild_Click(object sender, RoutedEventArgs e)
         {
-            trackingDirectory = TextBox1.Text;
+            trackingDirectory = DirectoryTextBox.Text;
             if (!Directory.Exists(trackingDirectory)) {
                 MessageBox.Show("Invalid Directory");
                 return;
@@ -213,17 +215,14 @@ namespace Question2
                             result.Add(j.Key);
                         }
                     }
-
-
-                   
                 }
             }
             return result;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void CheckForOutdatedLibraries_Click(object sender, RoutedEventArgs e)
         {
-            trackingDirectory = TextBox1.Text;
+            trackingDirectory = DirectoryTextBox.Text;
             if (!Directory.Exists(trackingDirectory))
             {
                 MessageBox.Show("Invalid Directory");
@@ -232,7 +231,7 @@ namespace Question2
             //Historic
             Dictionary<string, string> histDirDic = getListOfPreviousLibraryVersions();
             //Current
-            Dictionary<string, string> dirDic =  getDirectoryDictionary(@"C:\C_C++ Code PORTFOLIO\Question2\Question2\bin\Release\netcoreapp3.1\myDLLs");
+            Dictionary<string, string> dirDic =  getDirectoryDictionary(@trackingDirectory);
             List<String> l = createListOfProjects();
             //MessageBox.Show(l.ElementAt(0));
             Dictionary<string, string> trimmedDirDic = trimDirectoryDictionary(dirDic, l);
@@ -240,7 +239,7 @@ namespace Question2
             List<String> result = identifyOutliers(histDirDic, trimmedDirDic);
             //if (!result.Any()) { System.Environment.Exit(-1); }
             //MessageBox.Show(result.ElementAt(0));
-            TextBox2.Text = outputList(result);
+            OutputTextBox.Text = outputList(result);
 
         }
 

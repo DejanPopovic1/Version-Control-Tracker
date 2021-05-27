@@ -9,17 +9,21 @@
         WindowState="Maximized"
         >
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
         <Grid.Background>
             <ImageBrush ImageSource="C:\C_C++ Code PORTFOLIO\Question2\Question2\Capture1.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
 
-        <TextBox Name="TextBox1" Margin="33,41,0,0" Text="Enter directory here" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Width="724" Height="56" VerticalAlignment="Top"/>
-        <Label Content="Specify release folder &#xA;" Margin="33,10,0,0" HorizontalAlignment="Left" Width="126" Height="26" VerticalAlignment="Top"/>
+        <TextBox Name="DirectoryTextBox" Margin="33,41,0,0" Text="Enter directory here" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Width="448" Height="56" VerticalAlignment="Top"/>
+        <Label Content="Specify Release Folder &#xA;" Margin="33,10,0,0" HorizontalAlignment="Left" Width="126" Height="26" VerticalAlignment="Top"/>
 
 
-        <Button x:Name="Button1" Content="Version the Build" Margin="33,291,0,0" Click="Button_Click" HorizontalAlignment="Left" Width="402" Height="20" VerticalAlignment="Top"/>
+        <Button x:Name="VersionTheBuild" Content="Version the Build" Margin="33,266,0,0" Click="VersionTheBuild_Click" HorizontalAlignment="Left" Width="448" Height="20" VerticalAlignment="Top"/>
 
 
 
@@ -39,14 +43,14 @@
             <ListBoxItem>System.Web.Optimization.dll</ListBoxItem>
         </ListBox>
         -->
-        <TextBox x:Name="TextBox2" Margin="33,399,0,0" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Width="724" Height="120" VerticalAlignment="Top"/>
-        <Label Content="Confirm rebuild completed" Margin="33,260,0,0" HorizontalAlignment="Left" Width="153" Height="26" VerticalAlignment="Top"/>
-        <Label Content="List project names, e.g:&#xA;My.Foo.Bar.dll&#xA;My.Other.Project.dll&#xA;Yet.Another.Project.dll" Margin="33,110,0,0" HorizontalAlignment="Left" Width="130" Height="74" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox3"
+        <TextBox x:Name="OutputTextBox" Margin="33,368,0,0" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Width="448" Height="151" VerticalAlignment="Top" IsReadOnly="True" Background="LightGray" Grid.RowSpan="2"/>
+        <Label Content="Confirm Rebuild Completed" Margin="33,227,0,0" HorizontalAlignment="Left" Width="176" Height="26" VerticalAlignment="Top"/>
+        <Label Content="List Project Names" Margin="33,110,0,0" HorizontalAlignment="Left" Width="130" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="ProjectNameTextBox"
   AcceptsReturn="True"
-  VerticalScrollBarVisibility="Visible" Margin="33,189,0,0" Text="Enter project names" TextWrapping="Wrap" TextChanged="TextBox_TextChanged_1" HorizontalAlignment="Left" Width="724" Height="71" VerticalAlignment="Top"/>
-        <Button Content="Check for Outdated Libraries" Margin="33,333,0,0" Click="Button_Click_1" HorizontalAlignment="Left" Width="402" Height="20" VerticalAlignment="Top"/>
-        <Label Content="List of potentially outdated libraries (all non specified projects are assumed to be third party libraries)" Margin="33,368,0,0" HorizontalAlignment="Left" Width="544" Height="26" VerticalAlignment="Top"/>
+  VerticalScrollBarVisibility="Visible" Margin="33,141,0,0" Text="Enter project names" TextWrapping="Wrap" TextChanged="TextBox_TextChanged_1" HorizontalAlignment="Left" Width="448" Height="71" VerticalAlignment="Top"/>
+        <Button Content="Check for Outdated Libraries" Margin="33,308,0,0" Click="CheckForOutdatedLibraries_Click" HorizontalAlignment="Left" Width="448" Height="20" VerticalAlignment="Top"/>
+        <Label Content="List of Potentially Outdated Libraries" Margin="33,337,0,0" HorizontalAlignment="Left" Width="544" Height="26" VerticalAlignment="Top"/>
 
         <!-- View report button -->
 
