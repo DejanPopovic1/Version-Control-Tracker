@@ -17,7 +17,7 @@
         
         <TextBox Name="TextBox1" HorizontalAlignment="Left" Margin="33,41,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="56"/>
         <Label Content="Specify release folder &#xA;" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Button1" Content="Confirm" HorizontalAlignment="Left" Margin="33,133,0,0" VerticalAlignment="Top" Click="Button_Click" Width="402"/>
+        <Button x:Name="Button1" Content="Version the Build" HorizontalAlignment="Left" Margin="33,133,0,0" VerticalAlignment="Top" Click="Button_Click" Width="402"/>
 
 
 
