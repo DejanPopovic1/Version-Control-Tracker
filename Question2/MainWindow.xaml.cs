@@ -81,7 +81,7 @@ namespace Question2
         public List<String> createListOfProjects()
         {
             String listOfProjects = TextBox3.Text;
-            List<string> idList = listOfProjects.Split(new[] { "\n" }, StringSplitOptions.None).ToList();
+            List<string> idList = listOfProjects.Split(new[] { "\r\n" }, StringSplitOptions.None).ToList();
             return idList;
         }
 
@@ -133,11 +133,11 @@ namespace Question2
         public Dictionary<string, string> getListOfPreviousLibraryVersions()
         {
             Dictionary<string, string> ans = new Dictionary<string, string>();
-            ans.Add("My.First.Project.dll","3.0.0.0");
-            ans.Add("My.Second.Project.dll", "6.0.0.0");
-            ans.Add("My.Third.Project.dll", "6.0.0.0");
-            ans.Add("My.Fourth.Project.dll", "2.0.0.0");
-            ans.Add("My.Fifth.Project.dll", "1.0.0.0");
+            ans.Add("My.First.Project.dll","2.0.0.0");//3
+            ans.Add("My.Second.Project.dll", "4.0.0.0");//6
+            ans.Add("My.Third.Project.dll", "5.0.0.0");//6
+            ans.Add("My.Fourth.Project.dll", "2.0.0.0");//2
+            ans.Add("My.Fifth.Project.dll", "1.0.0.0");//1
             return ans;
         }
 
