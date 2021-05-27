@@ -100,39 +100,19 @@ namespace Question2
 
         public int versionToMagnitude(String ver) {
             List<string> verList = ver.Split(new[] { "." }, StringSplitOptions.None).ToList();
-            int first = Int32.Parse(verList.ElementAt(0)) * 10 ^ 3;
-            int second = Int32.Parse(verList.ElementAt(1)) * 10 ^ 2;
-            int third = Int32.Parse(verList.ElementAt(2)) * 10 ^ 1;
-            int fourth = Int32.Parse(verList.ElementAt(3)) * 10 ^ 0;
+            int first = Int32.Parse(verList.ElementAt(0)) * (int)Math.Pow(10, 3);
+            int second = Int32.Parse(verList.ElementAt(1)) * (int)Math.Pow(10, 2);
+            int third = Int32.Parse(verList.ElementAt(2)) * (int)Math.Pow(10, 1);
+            int fourth = Int32.Parse(verList.ElementAt(3)) * (int)Math.Pow(10, 0);
             return first + second + third + fourth;
         }
 
         public bool isValidUpdate(String oldVer, String newVer)
         {
-            int oldVerMag = versionToMagnitude(oldVer);
-            int newVerMag = versionToMagnitude(newVer);
-            List<string> oldVerList = oldVer.Split(new[] { "." }, StringSplitOptions.None).ToList();
-            List<string> newVerList = newVer.Split(new[] { "." }, StringSplitOptions.None).ToList();
-            int i = 0;
-            foreach (var item in oldVerList) {
-                if (Int16.Parse(newVerList.ElementAt(i)) <= Int16.Parse(item)) {
-                    return false;
-                }
-                i++;
+            if (versionToMagnitude(newVer) <= versionToMagnitude(oldVer)) {
+                return false;
             }
             return true;
-            
-
-            //int index;
-            //index = oldVer.IndexOf('.');
-            //string oldMajVer = oldVer.Substring(0, index);
-            //index = newVer.IndexOf('.');
-            //string newMajVer = newVer.Substring(0, index);
-            //if (Int16.Parse(newMajVer) == Int16.Parse(oldMajVer) + 1)
-            //{
-            //    return true;
-            //}
-            //return false;
         }
 
         public void determineOutOfDateLibraries() {
@@ -156,11 +136,11 @@ namespace Question2
         public Dictionary<string, string> getListOfPreviousLibraryVersions()
         {
             Dictionary<string, string> ans = new Dictionary<string, string>();
-            ans.Add("My.First.Project.dll","2.0.0.0");//3
-            ans.Add("My.Second.Project.dll", "4.0.0.0");//6
-            ans.Add("My.Third.Project.dll", "5.0.0.0");//6
-            ans.Add("My.Fourth.Project.dll", "2.0.0.0");//2
-            ans.Add("My.Fifth.Project.dll", "1.0.0.0");//1
+            ans.Add("My.First.Project.dll","3.5.0.3");//3.5.0.2
+            ans.Add("My.Second.Project.dll", "4.0.0.0");//6.0.0.0
+            ans.Add("My.Third.Project.dll", "5.0.0.0");//6.0.0.0
+            ans.Add("My.Fourth.Project.dll", "2.0.0.0");//2.0.1.0
+            ans.Add("My.Fifth.Project.dll", "1.0.0.0");//1.0.0.0
             return ans;
         }
 
