@@ -98,20 +98,41 @@ namespace Question2
             return d;
         }
 
-        //This is simplified. I must build in more complex rules
-        //oldVer and newVer conforms to the versioning pattern w.x.y.z
+        public int versionToMagnitude(String ver) {
+            List<string> verList = ver.Split(new[] { "." }, StringSplitOptions.None).ToList();
+            int first = Int32.Parse(verList.ElementAt(0)) * 10 ^ 3;
+            int second = Int32.Parse(verList.ElementAt(1)) * 10 ^ 2;
+            int third = Int32.Parse(verList.ElementAt(2)) * 10 ^ 1;
+            int fourth = Int32.Parse(verList.ElementAt(3)) * 10 ^ 0;
+            return first + second + third + fourth;
+        }
+
         public bool isValidUpdate(String oldVer, String newVer)
         {
-            int index;
-            index = oldVer.IndexOf('.');
-            string oldMajVer = oldVer.Substring(0, index);
-            index = newVer.IndexOf('.');
-            string newMajVer = newVer.Substring(0, index);
-            if (Int16.Parse(newMajVer) == Int16.Parse(oldMajVer) + 1)
-            {
-                return true;
+            int oldVerMag = versionToMagnitude(oldVer);
+            int newVerMag = versionToMagnitude(newVer);
+            List<string> oldVerList = oldVer.Split(new[] { "." }, StringSplitOptions.None).ToList();
+            List<string> newVerList = newVer.Split(new[] { "." }, StringSplitOptions.None).ToList();
+            int i = 0;
+            foreach (var item in oldVerList) {
+                if (Int16.Parse(newVerList.ElementAt(i)) <= Int16.Parse(item)) {
+                    return false;
+                }
+                i++;
             }
-            return false;
+            return true;
+            
+
+            //int index;
+            //index = oldVer.IndexOf('.');
+            //string oldMajVer = oldVer.Substring(0, index);
+            //index = newVer.IndexOf('.');
+            //string newMajVer = newVer.Substring(0, index);
+            //if (Int16.Parse(newMajVer) == Int16.Parse(oldMajVer) + 1)
+            //{
+            //    return true;
+            //}
+            //return false;
         }
 
         public void determineOutOfDateLibraries() {

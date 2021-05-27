@@ -58,11 +58,11 @@
 	   +---------------|---------------------+---------------+
 	   |2.0.2.4        |2.0.5.2              |Valid          |
 	   +---------------+---------------------+---------------+
-	   |2.0.2.4        |1.0.2.2              |Invalid        |
+	   |2.0.2.4        |1.0.2.2              |Invalid        | <-- version number regressed
 	   +---------------|---------------------+---------------+
-	   |2.0.2.4        |2.0.1.4              |Invalid        |
+	   |2.0.2.4        |2.0.1.4              |Invalid        | <-- version number regressed
 	   +---------------+---------------------+---------------+
-	   |2.0.2.4        |2.0.2.4              |Invalid        |
+	   |2.0.2.4        |2.0.2.4              |Invalid        | <-- version number remained the same
 	   +---------------|---------------------+---------------+
 *) Catering for third party libraries
    - All project build outputs must be specified in the textbox under "List project names"
