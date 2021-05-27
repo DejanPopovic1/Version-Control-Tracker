@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Question2"
         mc:Ignorable="d"
-        Title="DLL Tracker" Height="579" Width="894"
+        Title="DLL Tracker" Height="577" Width="894"
         WindowState="Maximized"
         >
     <Grid>
@@ -13,11 +13,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="C:\C_C++ Code PORTFOLIO\Question2\Question2\Capture1.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        
-        
-        <TextBox Name="TextBox1" HorizontalAlignment="Left" Margin="33,41,0,0" Text="Enter directory here" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="56"/>
-        <Label Content="Specify release folder &#xA;" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Button1" Content="Version the Build" HorizontalAlignment="Left" Margin="33,133,0,0" VerticalAlignment="Top" Click="Button_Click" Width="402"/>
+
+
+        <TextBox Name="TextBox1" Margin="33,41,0,0" Text="Enter directory here" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Width="724" Height="56" VerticalAlignment="Top"/>
+        <Label Content="Specify release folder &#xA;" Margin="33,10,0,0" HorizontalAlignment="Left" Width="126" Height="26" VerticalAlignment="Top"/>
+
+
+        <Button x:Name="Button1" Content="Version the Build" Margin="33,291,0,0" Click="Button_Click" HorizontalAlignment="Left" Width="402" Height="20" VerticalAlignment="Top"/>
 
 
 
@@ -37,14 +39,14 @@
             <ListBoxItem>System.Web.Optimization.dll</ListBoxItem>
         </ListBox>
         -->
-        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Margin="33,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged" Height="120"/>
-        <Label Content="Confirm rebuild completed" HorizontalAlignment="Left" Margin="33,102,0,0" VerticalAlignment="Top"/>
-        <Label Content="List project names, e.g:&#xA;My.Foo.Bar.dll&#xA;My.Other.Project.dll&#xA;Yet.Another.Project.dll" HorizontalAlignment="Left" Margin="33,158,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox2" Margin="33,399,0,0" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Width="724" Height="120" VerticalAlignment="Top"/>
+        <Label Content="Confirm rebuild completed" Margin="33,260,0,0" HorizontalAlignment="Left" Width="153" Height="26" VerticalAlignment="Top"/>
+        <Label Content="List project names, e.g:&#xA;My.Foo.Bar.dll&#xA;My.Other.Project.dll&#xA;Yet.Another.Project.dll" Margin="33,110,0,0" HorizontalAlignment="Left" Width="130" Height="74" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox3"
   AcceptsReturn="True"
-  VerticalScrollBarVisibility="Visible"  HorizontalAlignment="Left" Margin="33,246,0,0" Text="Enter project names" TextWrapping="Wrap" VerticalAlignment="Top" Width="724" TextChanged="TextBox_TextChanged_1" Height="71"/>
-        <Button Content="Check for Outdated Libraries" HorizontalAlignment="Left" Margin="33,335,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="402"/>
-        <Label Content="List of potentially outdated libraries (all non specified projects are assumed to be third party libraries)" HorizontalAlignment="Left" Margin="33,370,0,0" VerticalAlignment="Top"/>
+  VerticalScrollBarVisibility="Visible" Margin="33,189,0,0" Text="Enter project names" TextWrapping="Wrap" TextChanged="TextBox_TextChanged_1" HorizontalAlignment="Left" Width="724" Height="71" VerticalAlignment="Top"/>
+        <Button Content="Check for Outdated Libraries" Margin="33,333,0,0" Click="Button_Click_1" HorizontalAlignment="Left" Width="402" Height="20" VerticalAlignment="Top"/>
+        <Label Content="List of potentially outdated libraries (all non specified projects are assumed to be third party libraries)" Margin="33,368,0,0" HorizontalAlignment="Left" Width="544" Height="26" VerticalAlignment="Top"/>
 
         <!-- View report button -->
 
