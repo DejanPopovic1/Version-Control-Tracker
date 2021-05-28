@@ -72,7 +72,7 @@ namespace Question2
         {
             InitializeComponent();
             var myBinding = new Binding("ColorName");
-            getListOfPreviousLibraryVersions();
+            //getListOfPreviousLibraryVersions();
             //getDirectoryDictionary("Inpt test");
             Debug.WriteLine("TESTING");
             Console.WriteLine("Testiong 1 2 3");
@@ -136,10 +136,20 @@ namespace Question2
         public Dictionary<string, string> getListOfPreviousLibraryVersions()
         {
             Dictionary<string, string> ans = new Dictionary<string, string>();
-            ans.Add("My.First.Project.dll","3.5.0.3");//3.5.0.2
+            var OpenFile = new System.IO.StreamReader(@trackingDirectory + @"\hello.txt");
+            String line;
+            //while ((line = OpenFile.ReadLine()) != null) {
+            //    List<string> verList = line.Split(new[] { "," }, StringSplitOptions.None).ToList();
+            //    ans.Add(verList.ElementAt(0), verList.Last());
+            //}
+
+            //verList.Last();
+            //MessageBox.Show(line);
+            //fileContents.
+            ans.Add("My.First.Project.dll", "3.5.0.3");//3.5.0.2
             ans.Add("My.Second.Project.dll", "4.0.0.0");//6.0.0.0
             ans.Add("My.Third.Project.dll", "5.0.0.0");//6.0.0.0
-            ans.Add("My.Fourth.Project.dll", "2.0.0.0");//2.0.1.0
+            ans.Add("My.Fourth.Project.dll", "1.9.7.5");//2.0.1.0
             ans.Add("My.Fifth.Project.dll", "1.0.0.0");//1.0.0.0
             return ans;
         }
@@ -229,6 +239,7 @@ namespace Question2
                 MessageBox.Show("Invalid Directory");
                 return;
             }
+            
             //Historic
             Dictionary<string, string> histDirDic = getListOfPreviousLibraryVersions();
             //Current
