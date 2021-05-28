@@ -98,6 +98,11 @@ namespace Question2
             return count;
         }
 
+        public String getProjectName(String s) {
+            List<string> l = s.Split(new[] { "," }, StringSplitOptions.None).ToList();
+            return l.ElementAt(0);
+        }
+
         private void VersionTheBuild_Click(object sender, RoutedEventArgs e)
         {
             //Load file to memory
@@ -110,37 +115,24 @@ namespace Question2
             String fileString = File.ReadToEnd();
             File.Close();
             String[] verList = fileString.Split(new[] { "\r\n" }, StringSplitOptions.None).ToArray();
-
+            MessageBox.Show(verList[0]);
+            //Erase the file
             System.IO.File.WriteAllText(@trackingDirectory + @"\.dllTracker", string.Empty);
+            //Append latest versions to memory
             int i = 0;
+            //MessageBox.Show(getDirectoryDictionary(@trackingDirectory)["My.Third.Project.dll"]);
             foreach (var line in verList){
-                verList[i] = verList[i] + ",ADDED:" + getDirectoryDictionary(trackingDirectory)[verList[i]];
+                String versionTOAdd = getDirectoryDictionary(@trackingDirectory)[getProjectName(line)];
+                verList[i] = verList[i] /* + getDirectoryDictionary(@trackingDirectory)[verList[i]]*/ + versionTOAdd;
                 i++;
             }
-
-
+            MessageBox.Show(verList[0]);
+            //Copy memory to file
             TextWriter tw = new StreamWriter(@trackingDirectory + @"\.dllTracker");
             foreach (String s in verList) {
                 tw.WriteLine(s);
             }
-
             tw.Close();
-
-
-
-
-            //MessageBox.Show(verList[4]);
-
-
-
-
-            //while ((line = File.ReadToEnd()) != null)
-            //{
-            //    //List<string> verList = line.Split(new[] { "," }, StringSplitOptions.None).ToList();
-            //    //ans.Add(verList.ElementAt(0), verList.Last());
-            //    line += "TESTING";
-            //}
-
             return;
         }
 
