@@ -68,7 +68,7 @@
    - All project build outputs must be specified in the textbox under "List project names"
    - These names must be seperated by a newline and nothing else
    - Duplicates have no altering effect
-   - Any file not included in this textbox is taken to be a third party library and will not be tracked
+   - Any file not included in this textbox is taken to be a third party library and will not be displayed as having potentially outdated libraries
 *) To check for outdated libraries, click the "Check for Outdated Libraries" button; This will ensure that the DLL's with an invalid version number update will be shown
 *) An analogy to the DLLTracker app may be found with the Git version control system with the following analogies:
 	   +---------------+----------------------------------------------------+

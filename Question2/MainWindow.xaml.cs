@@ -33,7 +33,7 @@ namespace Question2
         {
             foreach (KeyValuePair<string, string> entry in d)
             {
-                if (projects.Contains(entry.Key)) {
+                if (!projects.Contains(entry.Key)) {
                     d.Remove(entry.Key);
                 }
             }
