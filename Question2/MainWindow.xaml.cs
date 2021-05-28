@@ -91,13 +91,6 @@ namespace Question2
             return ans;
         }
 
-        public int CountNumberOfFilesInDirectory(string directory)
-        {
-            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(directory);
-            int count = dir.GetFiles().Length;
-            return count;
-        }
-
         public String getProjectName(String s) {
             List<string> l = s.Split(new[] { "," }, StringSplitOptions.None).ToList();
             return l.ElementAt(0);
