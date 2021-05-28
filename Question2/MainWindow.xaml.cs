@@ -136,21 +136,12 @@ namespace Question2
         public Dictionary<string, string> getListOfPreviousLibraryVersions()
         {
             Dictionary<string, string> ans = new Dictionary<string, string>();
-            var OpenFile = new System.IO.StreamReader(@trackingDirectory + @"\hello.txt");
+            var OpenFile = new System.IO.StreamReader(@trackingDirectory + @"\.dllTracker");
             String line;
-            //while ((line = OpenFile.ReadLine()) != null) {
-            //    List<string> verList = line.Split(new[] { "," }, StringSplitOptions.None).ToList();
-            //    ans.Add(verList.ElementAt(0), verList.Last());
-            //}
-
-            //verList.Last();
-            //MessageBox.Show(line);
-            //fileContents.
-            ans.Add("My.First.Project.dll", "3.5.0.3");//3.5.0.2
-            ans.Add("My.Second.Project.dll", "4.0.0.0");//6.0.0.0
-            ans.Add("My.Third.Project.dll", "5.0.0.0");//6.0.0.0
-            ans.Add("My.Fourth.Project.dll", "1.9.7.5");//2.0.1.0
-            ans.Add("My.Fifth.Project.dll", "1.0.0.0");//1.0.0.0
+            while ((line = OpenFile.ReadLine()) != null) {
+                List<string> verList = line.Split(new[] { "," }, StringSplitOptions.None).ToList();
+                ans.Add(verList.ElementAt(0), verList.Last());
+            }
             return ans;
         }
 
