@@ -85,7 +85,7 @@
 
 *) Enter an invalid directory - note the popup error box
 *) Enter the directory of the BUILD_OUTPUT folder and click Version the Build
-*) Note how the version numbers in the .CSV file have been updated
+*) Note how the version numbers in the .dllTracker file have been updated
 *) Enter the project build names My.First.Project.dll, ..., My.Fifth.Project.dll in the list project names box
 *) Click "Check for Outdated Libraries" and note how the .dll files with invalid version updates are included in the textbox
 	 
@@ -95,5 +95,6 @@
 *) I didnt take into account "use the average values in the version sequence to determine which libraries are not up to date" as I was unsure what this exactly meant
 
 # Project next steps and improvement backlogs
+
 *) Make a console version of the DLL Tracker for speed of use
-*) Make the DLL Tracker run as a "service" which "listens" to the directory automatically tracking it, instead of clicking "Version the Build each time after a project build"
+*) Make the DLL Tracker run as a "service" which "listens" to the directory, automatically tracking it, instead of clicking "Version the Build" each time after a project build
