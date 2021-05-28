@@ -1,21 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Path = System.IO.Path;
 
 namespace Question2
@@ -114,22 +105,17 @@ namespace Question2
             String fileString = File.ReadToEnd();
             File.Close();
             String[] verList = fileString.Split(new[] { "\r\n" }, StringSplitOptions.None).ToArray();
-            
-            //MessageBox.Show(verList[0]);
             //Erase the file
             System.IO.File.WriteAllText(@trackingDirectory + @"\.dllTracker", string.Empty);
             //Append latest versions to memory
             int i = 0;
-            //MessageBox.Show(getDirectoryDictionary(@trackingDirectory)["My.Third.Project.dll"]);
             foreach (var line in verList) {
                 String versionToAdd = getDirectoryDictionary(@trackingDirectory)[getProjectName(line)];
                 if (isValidUpdate(getProjectVersion(line), versionToAdd)) { 
-                    verList[i] = verList[i] + ","/* + getDirectoryDictionary(@trackingDirectory)[verList[i]]*/ + versionToAdd;
+                    verList[i] = verList[i] + "," + versionToAdd;
                 }
                 i++;
             }
-            
-            //MessageBox.Show(verList[0]);
             //Copy memory to file
             TextWriter tw = new StreamWriter(@trackingDirectory + @"\.dllTracker");
             int j = 0;
