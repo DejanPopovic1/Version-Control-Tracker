@@ -103,6 +103,12 @@ namespace Question2
             return l.ElementAt(0);
         }
 
+        public String getProjectVersion(String s)
+        {
+            List<string> l = s.Split(new[] { "," }, StringSplitOptions.None).ToList();
+            return l.Last();
+        }
+
         private void VersionTheBuild_Click(object sender, RoutedEventArgs e)
         {
             //Load file to memory
@@ -115,22 +121,33 @@ namespace Question2
             String fileString = File.ReadToEnd();
             File.Close();
             String[] verList = fileString.Split(new[] { "\r\n" }, StringSplitOptions.None).ToArray();
-            MessageBox.Show(verList[0]);
+            
+            //MessageBox.Show(verList[0]);
             //Erase the file
             System.IO.File.WriteAllText(@trackingDirectory + @"\.dllTracker", string.Empty);
             //Append latest versions to memory
             int i = 0;
             //MessageBox.Show(getDirectoryDictionary(@trackingDirectory)["My.Third.Project.dll"]);
-            foreach (var line in verList){
-                String versionTOAdd = getDirectoryDictionary(@trackingDirectory)[getProjectName(line)];
-                verList[i] = verList[i] /* + getDirectoryDictionary(@trackingDirectory)[verList[i]]*/ + versionTOAdd;
+            foreach (var line in verList) {
+                String versionToAdd = getDirectoryDictionary(@trackingDirectory)[getProjectName(line)];
+                if (isValidUpdate(getProjectVersion(line), versionToAdd)) { 
+                    verList[i] = verList[i] + ","/* + getDirectoryDictionary(@trackingDirectory)[verList[i]]*/ + versionToAdd;
+                }
                 i++;
             }
-            MessageBox.Show(verList[0]);
+            
+            //MessageBox.Show(verList[0]);
             //Copy memory to file
             TextWriter tw = new StreamWriter(@trackingDirectory + @"\.dllTracker");
+            int j = 0;
             foreach (String s in verList) {
-                tw.WriteLine(s);
+                if (j == (verList.Count() - 1)){
+                    tw.Write(s);
+                }
+                else{
+                    tw.WriteLine(s);
+                }
+                j++;
             }
             tw.Close();
             return;
